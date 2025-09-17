@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Background & Circle Color Changer</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease;
+    }
+    .circle {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 2px solid black;
+      margin-bottom: 20px;
+      transition: background-color 0.3s ease;
+    }
+    .btn {
+      margin: 5px;
+      padding: 10px 20px;
+      border: none;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .btn.red { background-color: red; }
+    .btn.blue { background-color: blue; }
+    .btn.yellow { background-color: yellow; color: black; }
+  </style>
+</head>
+<body>
+  <div class="circle" id="circle"></div>
+  <div>
+    <button class="btn red" onclick="changeColor('red')">Red</button>
+    <button class="btn blue" onclick="changeColor('blue')">Blue</button>
+    <button class="btn yellow" onclick="changeColor('yellow')">Yellow</button>
+  </div>
+
+  <script>
+    function changeColor(color) {
+      document.body.style.backgroundColor = color;
+      document.getElementById("circle").style.backgroundColor = color;
+    }
+  </script>
+</body>
+</html>
